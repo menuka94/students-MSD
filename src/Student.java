@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Student {
+public class Student implements Comparable<Student>{
     private static ArrayList<Student> allStudents = new ArrayList<>();
     private int id;
     private Name name;
@@ -8,6 +8,10 @@ public class Student {
     private Address currentAddress;
     private Address diplomaAddress;
 
+    @Override
+    public int compareTo(Student student) {
+        return this.id - student.id;
+    }
 
     public Student(int id, Name name, Address permanentAddress, Address currentAddress, Address diplomaAddress) {
         this.id = id;
