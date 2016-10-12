@@ -7,8 +7,8 @@ public class Main {
         Student.Address currentAddress = new Student.Address("No2","Street 2", "Lane 2", "City 2", "Country 1", "81000");
         Student.Address diplomaAddress = new Student.Address("No3","Street 3", "Lane 3", "City 3", "Country 1", "81000");
 
-        Student.PhoneNumber mobile = new Student.PhoneNumber("123456789", "789456123");
-
+        Student.PhoneNumber mobile = new Student.PhoneNumber("123456789", "789456123"); // Edit this as you need
+        
         ArrayList<String> firstnames = new ArrayList<>();
         firstnames.add("Mark");
         firstnames.add("Max");
