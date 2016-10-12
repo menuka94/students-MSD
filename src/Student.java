@@ -7,24 +7,33 @@ public class Student implements Comparable<Student>{
     private Address permanentAddress;
     private Address currentAddress;
     private Address diplomaAddress;
+    private PhoneNumber phone;
 
     @Override
     public int compareTo(Student student) {
         return this.id - student.id;
     }
 
-    public Student(int id, Name name, Address permanentAddress, Address currentAddress, Address diplomaAddress) {
+    public Student(int id, Name name, Address permanentAddress, Address currentAddress, Address diplomaAddress, PhoneNumber phone) {
+        this.phone = phone;
         this.id = id;
         this.name = name;
         this.permanentAddress = permanentAddress;
         this.currentAddress = currentAddress;
         this.diplomaAddress = diplomaAddress;
+
+        allStudents.add(this);
     }
 
 
     public static class Name{
         private ArrayList<String> firstnames;
         private String lastname;
+
+        public Name(ArrayList<String> firstnames, String lastname){
+            this.firstnames = firstnames;
+            this.lastname = lastname;
+        }
     }
 
     public static class PhoneNumber{
@@ -54,6 +63,7 @@ public class Student implements Comparable<Student>{
         private String postalCode;
 
         public Address(String postBox, String line1, String line2, String city, String country, String postalCode){
+            this.postBox = postBox;
             this.postalCode = postalCode;
             this.line1 = line1;
             this.line2 = line2;
